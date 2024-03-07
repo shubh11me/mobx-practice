@@ -1,24 +1,30 @@
-import logo from './logo.svg';
 import './App.css';
-
+import { Greet } from "./Greet";
+import {Counter,arr} from './Counter'
+import { useState } from "react";
 function App() {
+
+  // let a="Abhi";
+const [a,setA]=useState("Abhi");
+
+
+  function changer() {
+// a="Mayur";
+setA("mayur")
+console.log(a)
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+   <div>
+    <h1>Hi</h1>
+    <Greet name="shubham" age="10"></Greet>
+    <Greet name="Sayali" age="12"></Greet>
+    <Greet name={a}></Greet>
+{a}
+    <button onClick={changer}>Change</button>
+
+    <Counter></Counter>
+   </div>
   );
 }
 
